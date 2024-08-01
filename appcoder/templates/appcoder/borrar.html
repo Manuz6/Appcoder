@@ -1,0 +1,16 @@
+{% extends "appcoder/padre.html" %}
+
+{% load static %}
+
+{% block title%} Formulario con API {% endblock title %}
+
+{% block contenidoquecambia %}
+    <form action="" method="POST">
+        
+        {% csrf_token %}
+
+        <a href="{% url 'ListarCursos' %}"> Volver</a>
+        <p>Estás seguro que queres borrar el curso: {{curso.nombre}} </p>
+        <input type="submit" value="Borrar">
+    </form>
+{% endblock contenidoquecambia %}  

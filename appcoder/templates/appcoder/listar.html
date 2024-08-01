@@ -1,0 +1,15 @@
+{% extends 'appcoder/padre.html' %}
+
+{% load static %}
+
+{% block title %} Formulario - Agregar Curso {% endblock title %}
+
+{% block contenidoquecambia %}
+
+    {% for curso in cursos %}
+        <p> nombre : {{curso.nombre}} Camada : {{curso.comision}}  </p>
+    
+        <a href="{% url 'ActualizarCurso' curso.pk %}"> Actualizar</a>
+        <a href="{% url 'DeleteCurso' curso.pk %}"> Borrar</a>
+    {% endfor%}
+{% endblock contenidoquecambia%}    

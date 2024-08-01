@@ -1,18 +1,18 @@
-{% extends 'appcoder/base.html' %}
+{% extends 'appcoder/padre.html' %}
 
 {% load static %}
 
 {% block title %} Formulario - Agregar Curso {% endblock title %}
 
-{% block main %}
+{% block contenidoquecambia %}
 
 
-    <form action="/curso_formulario/" method="POST">
+    <form action="{% url 'curso_formulario' %}" method="POST">
         {% csrf_token %}
         <p>Curso: <input type="text" name="curso"></p>
-        <p>Camada: <input type="text" name="camada"></p>
+        <p>Camada: <input type="text" name="comision"></p>
 
         <input type="submit" value="Enviar">
     
     </form>
-{% endblock main %}
+{% endblock %}
